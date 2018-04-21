@@ -9,8 +9,7 @@
 class ATank;
 
 UCLASS()
-class BATTLETANK_API ATankAIController : public AAIController
-{
+class BATTLETANK_API ATankAIController : public AAIController {
 	GENERATED_BODY()
 
 private:

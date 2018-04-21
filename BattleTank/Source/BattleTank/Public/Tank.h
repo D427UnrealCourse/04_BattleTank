@@ -11,7 +11,7 @@ class UTankBarrel;
 class UTankAimingComponent;
 
 UCLASS()
-class BATTLETANK_API ATank : public APawn
+class BATTLETANK_API ATank : public APawn 
 {
 	GENERATED_BODY()
 
@@ -20,6 +20,12 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
+
+	UFUNCTION(BlueprintCallable, Category = Setup)
+	void SetTurretReference(UTankTurret* TurretToSet);
+
+	UFUNCTION(BlueprintCallable, Category = Firing)
+	void Fire();
 
 private:
 	// Sets default values for this pawn's properties
