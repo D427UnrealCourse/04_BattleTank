@@ -3,12 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "TankBarrel.h"
 #include "GameFramework/Pawn.h"
 #include "Tank.generated.h"
 
 // Forward Declarations
 class UTankBarrel;
 class UTankAimingComponent;
+class AProjectile;
 
 UCLASS()
 class BATTLETANK_API ATank : public APawn 
@@ -36,7 +38,6 @@ protected:
 	virtual void BeginPlay() override;
 	UTankAimingComponent* TankAimingComponent = nullptr;
 
-
 private:	
 
 	// Called to bind functionality to input
@@ -44,5 +45,10 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = Firing)
 	float LaunchSpeed = 10000; // 1,200 feet per second is 37,000 centimeters per second
+
+	UPROPERTY(EditAnywhere, Category = Setup)
+	TSubclassOf<AProjectile> ProjectileBlueprint;
+
+	UTankBarrel* Barrel = nullptr; // local barrel ref for projectile
 	
 };
