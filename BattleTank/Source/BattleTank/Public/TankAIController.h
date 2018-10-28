@@ -19,4 +19,6 @@ private:
 	virtual void BeginPlay() override;
 	ATank* ControlledTank = nullptr;
 	ATank* PlayerTank = nullptr;
+	// UPROPERTY(BlueprinEditable)
+	float AcceptanceRadius = 30000;
 };

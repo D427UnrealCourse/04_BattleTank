@@ -42,6 +42,7 @@ void ATank::Fire() {
 			Barrel->GetSocketLocation(FName("Projectile")),
 			Barrel->GetSocketRotation(FName("Projectile"))
 			);
+		UE_LOG(LogTemp, Warning, TEXT("!!! Built AProjectile !!!"));
 		Projectile->LaunchProjectile(LaunchSpeed);
 		LastFireTime = FPlatformTime::Seconds();
 	}

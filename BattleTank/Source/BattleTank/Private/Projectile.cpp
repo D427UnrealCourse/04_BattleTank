@@ -8,7 +8,9 @@
 AProjectile::AProjectile() {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	UE_LOG(LogTemp, Warning, TEXT("!!! Before Projectile Movement !!!"));
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(FName("Projectile Movement"));
+	UE_LOG(LogTemp, Warning, TEXT("!!! Got Projectile Movement !!!"));
 	ProjectileMovement->bAutoActivate = false;
 }
 

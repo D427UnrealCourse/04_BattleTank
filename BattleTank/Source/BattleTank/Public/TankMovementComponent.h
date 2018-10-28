@@ -20,7 +20,10 @@ public:
 	void Initialize(UTankTrack* LeftTrackToSet, UTankTrack* RightTrackToSet);
 	UFUNCTION(BlueprintCallable, Category = input)
 	void IntendMoveForward(float Throw);
-	
+	UFUNCTION(BlueprintCallable, Category = input)
+	void IntendTurnRight(float Throw);
+	virtual void RequestDirectMove(const FVector& MoveVelocity, bool bForceMaxSpeed) override;
+
 private:
 	UTankTrack* LeftTrack = nullptr;
 	UTankTrack* RightTrack = nullptr;
