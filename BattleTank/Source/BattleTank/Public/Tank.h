@@ -10,10 +10,11 @@
 // Forward Declarations
 class UTankBarrel;
 class UTankAimingComponent;
+class UTankMovementComponent;
 class AProjectile;
 
 UCLASS()
-class BATTLETANK_API ATank : public APawn 
+class BATTLETANK_API ATank : public APawn
 {
 	GENERATED_BODY()
 
@@ -37,6 +38,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	UTankAimingComponent* TankAimingComponent = nullptr;
+	UPROPERTY(BlueprintReadOnly)
+	UTankMovementComponent* TankMovementComponent = nullptr;
 
 private:	
 
@@ -44,7 +47,7 @@ private:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	UPROPERTY(EditAnywhere, Category = Firing)
-	float LaunchSpeed = 10000; // 1,200 feet per second is 37,000 centimeters per second
+	float LaunchSpeed = 7500; // 1,200 feet per second is 37,000 centimeters per second
 
 	UPROPERTY(EditAnywhere, Category = Setup)
 	TSubclassOf<AProjectile> ProjectileBlueprint;
